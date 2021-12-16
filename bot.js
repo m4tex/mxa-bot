@@ -4,7 +4,8 @@
 const config = require('./config.json')
 
 //MongoDB implementation
-const database = require('./db_connect')('dcsteam_bot')
+const MongoClient = require('mongodb').MongoClient
+var dbConnection = await MongoClient.connect('mongodb://localhost:27017/dcsteam_bot')
 
 //Discord.js module implementation
 const Discord = require('discord.js')
@@ -41,8 +42,14 @@ discordBot.on('ready', () => ***REMOVED***
 ***REMOVED***);
 
 discordBot.on('message', msg => ***REMOVED***
-  if (msg.content === "!bind") ***REMOVED***
-    
+  if (msg.content === "mxa bind") ***REMOVED***
+    dbConnection.then(db => ***REMOVED***
+      db.db("dcsteam_bot").collection("discord_bound_channels").insertOne(***REMOVED***
+        channelID: msg.channelId
+      ***REMOVED***, function (err, res) ***REMOVED***
+        msg.channel.send("Bound this channel to the bot.");
+      ***REMOVED***)
+    ***REMOVED***)
   ***REMOVED***
 ***REMOVED***);
 
