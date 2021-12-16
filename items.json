@@ -1,0 +1,183 @@
+[***REMOVED***
+    "appid": 730,
+    "contextid": "2",
+    "assetid": "24162544510",
+    "classid": "4661503165",
+    "instanceid": "188530139",
+    "amount": 1,
+    "pos": 1,
+    "id": "24162544510",
+    "currency": 0,
+    "background_color": "",
+    "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf1OrYYiR95t21n4uFnvHxDLrfqX9Y78BjtebT9ILyjWu4ohQ0J3f3JdTAcVRsNwmG_Fi-k7vpgp-5us_BnHU36ykg5S3flha1hE5KPLNtm7XAHhrzvchO",
+    "icon_url_large": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf1OrYYiR95t21n4uFnvHxDLrfqX9Y78BjtebT9ILyjWu4ohQ0JwavdcTCJxg6YAqF-QPsl7-5g5-87sjPzntmvHIqsHiJzhy1gUpOZ-ZtgKOYGwqcGeUXS6rbv2Kf",
+    "descriptions": [***REMOVED***
+        "type": "html",
+        "value": "Exterior: Factory New"
+    ***REMOVED***, ***REMOVED***
+        "type": "html",
+        "value": " "
+    ***REMOVED***, ***REMOVED***
+        "type": "html",
+        "value": "This marble-enamel-handled flip knife conceals a small but viciously tapered blade. It has been anodized orange and hand-etched in a tiger stripe pattern.\n\n<i>Like the tiger it is rare... like the tiger it is deadly...</i>"
+    ***REMOVED***, ***REMOVED***
+        "type": "html",
+        "value": " "
+    ***REMOVED***],
+    "tradable": true,
+    "actions": [***REMOVED***
+        "link": "steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20S%owner_steamid%A%assetid%D16594887861435379720",
+        "name": "Inspect in Game..."
+    ***REMOVED***],
+    "name": "★ Navaja Knife | Tiger Tooth",
+    "name_color": "8650AC",
+    "type": "★ Covert Knife",
+    "market_name": "★ Navaja Knife | Tiger Tooth (Factory New)",
+    "market_hash_name": "★ Navaja Knife | Tiger Tooth (Factory New)",
+    "market_actions": [***REMOVED***
+        "link": "steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20M%listingid%A%assetid%D16594887861435379720",
+        "name": "Inspect in Game..."
+    ***REMOVED***],
+    "commodity": false,
+    "market_tradable_restriction": 7,
+    "marketable": true,
+    "tags": [***REMOVED***
+        "internal_name": "CSGO_Type_Knife",
+        "name": "Knife",
+        "category": "Type",
+        "color": "",
+        "category_name": "Type"
+    ***REMOVED***, ***REMOVED***
+        "internal_name": "weapon_knife_gypsy_jackknife",
+        "name": "Navaja Knife",
+        "category": "Weapon",
+        "color": "",
+        "category_name": "Weapon"
+    ***REMOVED***, ***REMOVED***
+        "internal_name": "unusual",
+        "name": "★",
+        "category": "Quality",
+        "color": "8650AC",
+        "category_name": "Category"
+    ***REMOVED***, ***REMOVED***
+        "internal_name": "Rarity_Ancient_Weapon",
+        "name": "Covert",
+        "category": "Rarity",
+        "color": "eb4b4b",
+        "category_name": "Quality"
+    ***REMOVED***, ***REMOVED***
+        "internal_name": "WearCategory0",
+        "name": "Factory New",
+        "category": "Exterior",
+        "color": "",
+        "category_name": "Exterior"
+    ***REMOVED***],
+    "is_currency": false,
+    "market_marketable_restriction": 0,
+    "fraudwarnings": []
+***REMOVED***,***REMOVED***
+    "appid": 730,
+    "contextid": "2",
+    "assetid": "24162402314",
+    "classid": "4662009923",
+    "instanceid": "188530139",
+    "amount": 1,
+    "pos": 35,
+    "id": "24162402314",
+    "currency": 0,
+    "background_color": "",
+    "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alDL3dl3hZ6sRygdbN_Iv9nBrhrkU_YT32LITBcQU-YV7U-FTsx--71pbpvMjBmnBr73N2tHaLlxC0n1gSOTTnAQeD",
+    "icon_url_large": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alDL3dl3hZ6sRygdbN_Iv9nGu4qgE7Nnf2cYDGcFI7aVqE-VK-wejrh5PuupydmnI2unUqtn3Vykbj0BEaZuBsm7XAHv8Qvezl",
+    "descriptions": [***REMOVED***
+        "type": "html",
+        "value": "Exterior: Factory New"
+    ***REMOVED***, ***REMOVED***
+        "type": "html",
+        "value": " "
+    ***REMOVED***, ***REMOVED***
+        "type": "html",
+        "value": "With a smaller magazine than its unmuffled counterpart, the silenced M4A1 provides quieter shots with less recoil and better accuracy. It has been hand painted in an attempt to make a suggestion about the duality of man.\n\n<i>For the joker in all of us</i>"
+    ***REMOVED***, ***REMOVED***
+        "type": "html",
+        "value": " "
+    ***REMOVED***, ***REMOVED***
+        "type": "html",
+        "value": "The Glove Collection",
+        "color": "9da1a9"
+    ***REMOVED***, ***REMOVED***
+        "type": "html",
+        "value": " "
+    ***REMOVED***, ***REMOVED***
+        "type": "html",
+        "value": "<br><div id=\"sticker_info\" name=\"sticker_info\" title=\"Sticker\" style=\"border: 2px solid rgb(102, 102, 102); border-radius: 6px; width=100; margin:4px; padding:8px;\"><center><img width=64 height=48 src=\"https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/rmr2020/geng_holo.a63643dd9f76d4ef109c38a63cd60d713e1a773c.png\"><br>Sticker: Gen.G (Holo) | 2020 RMR</center></div>"
+    ***REMOVED***],
+    "tradable": true,
+    "actions": [***REMOVED***
+        "link": "steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20S%owner_steamid%A%assetid%D11848595051235366734",
+        "name": "Inspect in Game..."
+    ***REMOVED***],
+    "name": "M4A1-S | Flashback",
+    "name_color": "D2D2D2",
+    "type": "Restricted Rifle",
+    "market_name": "M4A1-S | Flashback (Factory New)",
+    "market_hash_name": "M4A1-S | Flashback (Factory New)",
+    "market_actions": [***REMOVED***
+        "link": "steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20M%listingid%A%assetid%D11848595051235366734",
+        "name": "Inspect in Game..."
+    ***REMOVED***],
+    "commodity": false,
+    "market_tradable_restriction": 7,
+    "marketable": true,
+    "tags": [***REMOVED***
+        "internal_name": "CSGO_Type_Rifle",
+        "name": "Rifle",
+        "category": "Type",
+        "color": "",
+        "category_name": "Type"
+    ***REMOVED***, ***REMOVED***
+        "internal_name": "weapon_m4a1_silencer",
+        "name": "M4A1-S",
+        "category": "Weapon",
+        "color": "",
+        "category_name": "Weapon"
+    ***REMOVED***, ***REMOVED***
+        "internal_name": "set_community_15",
+        "name": "The Glove Collection",
+        "category": "ItemSet",
+        "color": "",
+        "category_name": "Collection"
+    ***REMOVED***, ***REMOVED***
+        "internal_name": "normal",
+        "name": "Normal",
+        "category": "Quality",
+        "color": "",
+        "category_name": "Category"
+    ***REMOVED***, ***REMOVED***
+        "internal_name": "Rarity_Mythical_Weapon",
+        "name": "Restricted",
+        "category": "Rarity",
+        "color": "8847ff",
+        "category_name": "Quality"
+    ***REMOVED***, ***REMOVED***
+        "internal_name": "WearCategory0",
+        "name": "Factory New",
+        "category": "Exterior",
+        "color": "",
+        "category_name": "Exterior"
+    ***REMOVED***, ***REMOVED***
+        "internal_name": "Tournament17",
+        "name": "2020 RMR",
+        "category": "Tournament",
+        "color": "",
+        "category_name": "Tournament"
+    ***REMOVED***, ***REMOVED***
+        "internal_name": "Team99",
+        "name": "Gen.G Esports",
+        "category": "TournamentTeam",
+        "color": "",
+        "category_name": "Team"
+    ***REMOVED***],
+    "is_currency": false,
+    "market_marketable_restriction": 0,
+    "fraudwarnings": []
+***REMOVED***]
