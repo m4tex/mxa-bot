@@ -5,16 +5,33 @@ const config = require('./config.json')
 
 //MongoDB implementation
 const MongoClient = require('mongodb').MongoClient
-var dbConnection = await MongoClient.connect('mongodb://localhost:27017/dcsteam_bot')
+
+console.log('Establishing a connection with the database... ');
+
+var database
+var discord_bound_channels
+var steam_user_data
+
+async function connection() ***REMOVED***
+  database = await MongoClient.connect('mongodb://localhost:27017/dcsteam_bot')
+  discord_bound_channels = await database.db("dcsteam_bot").collection("discord_bound_channels")
+  steam_user_data = await database.db("dcsteam_bot").collection("steam_user_data")
+
+  console.log('Connection established.');
+***REMOVED***
+connection()
+
 
 //Discord.js module implementation
 const Discord = require('discord.js')
+const commandHandler = require('./commands')
 
 const discordBot = new Discord.Client(***REMOVED***
   intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES]
 ***REMOVED***);
 
 discordBot.login(config.discordToken);
+
 
 //Steam modules implementation
 const SteamUser = require('steam-user')
@@ -37,24 +54,17 @@ steamClient.setOption('promptSteamGuardCode', false)
 
 //Here begins the actual code
 discordBot.on('ready', () => ***REMOVED***
-  console.info(`Logged in as $***REMOVED***discordBot.user.tag***REMOVED***!`)
+  console.info(`Bot started as: $***REMOVED***discordBot.user.tag***REMOVED***.`)
   steamClient.logOn(logOnOptions);
 ***REMOVED***);
 
-discordBot.on('message', msg => ***REMOVED***
-  if (msg.content === "mxa bind") ***REMOVED***
-    dbConnection.then(db => ***REMOVED***
-      db.db("dcsteam_bot").collection("discord_bound_channels").insertOne(***REMOVED***
-        channelID: msg.channelId
-      ***REMOVED***, function (err, res) ***REMOVED***
-        msg.channel.send("Bound this channel to the bot.");
-      ***REMOVED***)
-    ***REMOVED***)
-  ***REMOVED***
-***REMOVED***);
+discordBot.on('message', commandHandler);
 
-steamClient.on('steamGuard', (domain, callback) => ***REMOVED***
-
+steamClient.on('steamGuard', async function(domain, callback) ***REMOVED***
+  channels = await discord_bound_channels.find(***REMOVED******REMOVED***)
+  channels.forEach(channel => ***REMOVED***
+    discordBot.channels.cache.get(channel.channelID).send("Enter Steam guard for the bot.")
+  ***REMOVED***);
 ***REMOVED***)
 
 steamClient.on('loggedOn', function () ***REMOVED***
@@ -64,7 +74,3 @@ steamClient.on('loggedOn', function () ***REMOVED***
 steamClient.on('webSession', function (sessionID, cookies) ***REMOVED***
 
 ***REMOVED***)
-
-async function discordCommand(command, callback) ***REMOVED***
-
-***REMOVED***
