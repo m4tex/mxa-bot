@@ -1,5 +1,6 @@
 //#region Imports and Node modules implementation
-
+//Importing the file system module.
+const fs = require('fs')
 //Importing the configuration file.
 const config = require('./config.json')
 
@@ -24,10 +25,16 @@ connection()
 
 //Discord.js module implementation
 const Discord = require('discord.js')
-const commandHandler = require('./commands')
-
 const discordBot = new Discord.Client(***REMOVED***
   intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES]
+***REMOVED***);
+
+discordBot.commands = new Discord.Collection()
+
+var commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js')).map(file => require(`./commands/$***REMOVED***file***REMOVED***`))
+commandFiles.forEach(command => ***REMOVED***
+   discordBot.commands.set(command.name, command)
+   console.log(command.name);
 ***REMOVED***);
 
 discordBot.login(config.discordToken);
@@ -55,22 +62,38 @@ steamClient.setOption('promptSteamGuardCode', false)
 //Here begins the actual code
 discordBot.on('ready', () => ***REMOVED***
   console.info(`Bot started as: $***REMOVED***discordBot.user.tag***REMOVED***.`)
-  steamClient.logOn(logOnOptions);
+  steamClient.logOn(logOnOptions)
 ***REMOVED***);
 
-discordBot.on('message', commandHandler);
+discordBot.on('message', function (msg) ***REMOVED***
+  var tokens = msg.content.split(/ +/)
+  if(tokens.shift() === 'mxa')***REMOVED***
+    var command = tokens.shift().toLowerCase()
+    var extraArgs = ***REMOVED***
+      coll: discord_bound_channels,
+      guardCallback: guardCallback,
+      canSend: awaitsGuard,
+    ***REMOVED***
+    discordBot.commands.get(command).execute(msg, tokens, extraArgs)
+  ***REMOVED***
+***REMOVED***)
 
-steamClient.on('steamGuard', async function(domain, callback) ***REMOVED***
-  channels = await discord_bound_channels.find(***REMOVED******REMOVED***)
-  channels.forEach(channel => ***REMOVED***
-    discordBot.channels.cache.get(channel.channelID).send("Enter Steam guard for the bot.")
-  ***REMOVED***);
+var awaitsGuard = true
+var guardCallback
+
+steamClient.on('steamGuard', async function (domain, callback) ***REMOVED***
+  guardCallback = callback;
+  sendToDev("Enter steam guard code for: m4tex.")
 ***REMOVED***)
 
 steamClient.on('loggedOn', function () ***REMOVED***
-  console.log('Logged into steam.')
+  sendToDev("Logged into steam successfuly.")
+  awaitsGuard = false;
 ***REMOVED***)
 
-steamClient.on('webSession', function (sessionID, cookies) ***REMOVED***
-
-***REMOVED***)
+async function sendToDev(message)***REMOVED***
+  channels = await discord_bound_channels.find(***REMOVED******REMOVED***)
+  channels.forEach(channel => ***REMOVED***
+    discordBot.channels.cache.get(channel.channelID).send(message)
+  ***REMOVED***)
+***REMOVED***
