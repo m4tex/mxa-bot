@@ -1,0 +1,20 @@
+***REMOVED***
+	"dbdccom": ***REMOVED***
+		"scope": "javascript",
+		"prefix": "dbdc",
+		"body": [
+            "var collections",
+            "async function db() ***REMOVED***",
+            "   collections = await require('../modules/databaseManager')",
+            "***REMOVED***",
+            "",
+			"module.exports = ***REMOVED***",
+			"	name: '$1',",
+			"	description: '$2',",
+			"	execute: async function(msg, tokens) ***REMOVED***",
+			"		$3",
+			"	***REMOVED***",
+			"***REMOVED***"
+		]
+	***REMOVED***
+***REMOVED***

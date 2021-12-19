@@ -1,0 +1,13 @@
+***REMOVED***
+	"dbdccom": ***REMOVED***
+		"scope": "javascript",
+		"prefix": "idbdc",
+		"body": [
+            "var collections",
+            "async function db() ***REMOVED***",
+            "   collections = await require('../databaseManager')",
+            "***REMOVED***",
+            "db()"
+		]
+	***REMOVED***
+***REMOVED***

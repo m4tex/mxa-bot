@@ -2,7 +2,9 @@
   "dependencies": ***REMOVED***
     "discord.js": "^13.3.1",
     "mongodb": "^4.2.2",
+    "puppeteer": "^13.0.0",
     "steam-tradeoffer-manager": "^2.10.4",
-    "steam-user": "^4.20.2"
+    "steam-user": "^4.20.2",
+    "steamid": "^2.0.0"
   ***REMOVED***
 ***REMOVED***

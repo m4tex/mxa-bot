@@ -1,27 +1,21 @@
 //#region Imports and Node modules implementation
 //Importing the file system module.
 const fs = require('fs')
+//Importing the fetch method.
+const fetch = require('node-fetch')
+
 //Importing the configuration file.
 const config = require('./config.json')
 
-//MongoDB implementation
-const MongoClient = require('mongodb').MongoClient
+//Extra data stored outside.
+const extraData = require('./modules/commandData')
 
-console.log('Establishing a connection with the database... ');
-
-var database
-var discord_bound_channels
-var steam_user_data
-
-async function connection() ***REMOVED***
-  database = await MongoClient.connect('mongodb://localhost:27017/dcsteam_bot')
-  discord_bound_channels = await database.db("dcsteam_bot").collection("discord_bound_channels")
-  steam_user_data = await database.db("dcsteam_bot").collection("steam_user_data")
-
-  console.log('Connection established.');
+//MongoDB implementation (imports collections)
+var collections
+async function database()***REMOVED***
+  collections = await require('./modules/databaseManager')
 ***REMOVED***
-connection()
-
+database()
 
 //Discord.js module implementation
 const Discord = require('discord.js')
@@ -37,26 +31,28 @@ commandFiles.forEach(command => ***REMOVED***
    console.log(command.name);
 ***REMOVED***);
 
+//mxa help command
+var commandNames = Array.from(discordBot.commands).map(x => " " + x[0]).toString()
+var help = ***REMOVED***
+  name: 'help',
+  execute: function(msg, tokens)***REMOVED***
+    var embed = new Discord.MessageEmbed().setColor('#0099ff').setTitle('Commands :sunglasses:').addField("List of commands:", `$***REMOVED***commandNames***REMOVED***`)
+    msg.channel.send(***REMOVED***embeds: [embed]***REMOVED***)
+  ***REMOVED***
+***REMOVED***
+
+discordBot.commands.set(help.name, help)
+
 discordBot.login(config.discordToken);
 
-
 //Steam modules implementation
+const steamClient = require('./modules/steamClient')
 const SteamUser = require('steam-user')
-const TradeOfferManager = require('steam-tradeoffer-manager')
-const steamClient = new SteamUser()
 
 const logOnOptions = ***REMOVED***
   "accountName": config.username,
   "password": config.password
 ***REMOVED***
-
-const manager = new TradeOfferManager(***REMOVED***
-  steam: steamClient,
-  language: 'en'
-***REMOVED***)
-
-steamClient.setOption('promptSteamGuardCode', false)
-
 //#endregion
 
 //Here begins the actual code
@@ -69,30 +65,29 @@ discordBot.on('message', function (msg) ***REMOVED***
   var tokens = msg.content.split(/ +/)
   if(tokens.shift() === 'mxa')***REMOVED***
     var command = tokens.shift().toLowerCase()
-    var extraArgs = ***REMOVED***
-      coll: discord_bound_channels,
-      guardCallback: guardCallback,
-      canSend: awaitsGuard,
+    var dcCommand = discordBot.commands.get(command)
+    if(dcCommand !== undefined)***REMOVED***
+      dcCommand.execute(msg, tokens)
     ***REMOVED***
-    discordBot.commands.get(command).execute(msg, tokens, extraArgs)
+    else***REMOVED***
+      msg.channel.send("This command doesn't exist. Check out `mxa help` to see a full list of the commands.")
+    ***REMOVED***
   ***REMOVED***
 ***REMOVED***)
 
-var awaitsGuard = true
-var guardCallback
-
 steamClient.on('steamGuard', async function (domain, callback) ***REMOVED***
-  guardCallback = callback;
+  extraData.steamGuardCallback = callback;
   sendToDev("Enter steam guard code for: m4tex.")
 ***REMOVED***)
 
 steamClient.on('loggedOn', function () ***REMOVED***
+  steamClient.setPersona(SteamUser.EPersonaState.Online)
   sendToDev("Logged into steam successfuly.")
-  awaitsGuard = false;
+  extraData.loggedOn = true;
 ***REMOVED***)
 
 async function sendToDev(message)***REMOVED***
-  channels = await discord_bound_channels.find(***REMOVED******REMOVED***)
+  channels = await collections.devchannels.find(***REMOVED******REMOVED***)
   channels.forEach(channel => ***REMOVED***
     discordBot.channels.cache.get(channel.channelID).send(message)
   ***REMOVED***)

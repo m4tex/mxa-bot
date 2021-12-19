@@ -1,0 +1,15 @@
+***REMOVED***
+	"dccom": ***REMOVED***
+		"scope": "javascript",
+		"prefix": "dccom",
+		"body": [
+			"module.exports = ***REMOVED***",
+			"	name: '$1',",
+			"	description: '$2',",
+			"	execute: function(msg, tokens) ***REMOVED***",
+			"		$3",
+			"	***REMOVED***",
+			"***REMOVED***"
+		]
+	***REMOVED***
+***REMOVED***
