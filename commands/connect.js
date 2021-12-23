@@ -6,7 +6,8 @@ var collections
 
 module.exports = ***REMOVED***
     name: 'connect',
-    description: 'Connects your discord account with a steam account. It is not associated with the `connections` section on your account. The connections are being stored separately on our database for security reasons.)',
+    description: 'Connects your discord account with a steam account. It is not associated with the *connections* section on your discord account. The connections are being stored separately on our database.',
+    usage: 'prefix connect steamid. Example: mxa connect 76561198982789899',
     execute: async function (msg, tokens) ***REMOVED***
         if (tokens[0] !== undefined && new SteamID(tokens[0]).isValidIndividual()) ***REMOVED***
             var res = await collections.inventories.countDocuments(***REMOVED***discord: msg.author.id***REMOVED***, ***REMOVED***limit: 1***REMOVED***)
@@ -19,7 +20,7 @@ module.exports = ***REMOVED***
             ***REMOVED***
             else ***REMOVED***
                 var code = genCode()
-                usersToCheck.push(***REMOVED*** discordId: msg.author.id, steamId: tokens[0], code: code, msg: msg, iterations: 36 ***REMOVED***)
+                usersToCheck.push(***REMOVED*** discordId: msg.author.id, steamId: tokens[0], code: code, msg: msg, index: usersToCheck.length, iterations: 36 ***REMOVED***)
                 msg.channel.send("In order to verify your account, please add: `" + code + "` to your nickname. You can remove the code once the bot verifies you.")
             ***REMOVED***
         ***REMOVED*** else ***REMOVED***
@@ -48,9 +49,10 @@ async function checkUsers() ***REMOVED***
             ***REMOVED***
         ***REMOVED***)
     ***REMOVED***
+    console.log(usersToCheck);
 ***REMOVED***
 
-setInterval(checkUsers, 5000)
+setInterval(checkUsers, 2000)
 
 function genCode() ***REMOVED***
     var code = ""

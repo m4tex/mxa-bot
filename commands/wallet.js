@@ -6,7 +6,8 @@ db()
 
 module.exports = ***REMOVED***
     name: 'wallet',
-    description: '',
+    description: 'Shows how many mxa credits you have!',
+    usage: 'prefix wallet. Example: mxa wallet',
     execute: function(msg, tokens, extras) ***REMOVED***
         
     ***REMOVED***
