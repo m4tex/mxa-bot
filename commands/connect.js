@@ -60,15 +60,3 @@ function genCode() ***REMOVED***
     ***REMOVED***
     return code
 ***REMOVED***
-
-async function createInventory(msg, steamId) ***REMOVED***
-    var res = await collections.inventories.countDocuments(***REMOVED***userID: msg.author.id***REMOVED***, ***REMOVED***limit: 1***REMOVED***)
-    ***REMOVED***
-        await collections.inventories.insertOne(***REMOVED***
-            discord: msg.author.id,
-            steam: steamid,
-            inventoryContents: []
-        ***REMOVED***)
-        msg.channel.send("Created an inventory for :" + msg.author.username + ".")
-    ***REMOVED***
-***REMOVED***
