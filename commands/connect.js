@@ -1,27 +1,29 @@
-const steamClient = require('../modules/steamClient')
 const SteamID = require('steamid')
+const SteamClient = require('../modules/steamClient')
+// const addToVerifier = require('./verify').addUserToVerify
 
-var collections
-(async () => ***REMOVED*** collections = await require('../modules/databaseManager') ***REMOVED***)()
+let collections
+(async () => ***REMOVED***
+    collections = await require('../modules/databaseManager')
+***REMOVED***)()
 
+setInterval(checkUsers, 20000)
 module.exports = ***REMOVED***
     name: 'connect',
     description: 'Connects your discord account with a steam account. It is not associated with the *connections* section on your discord account. The connections are being stored separately on our database.',
     usage: 'prefix connect steamid. Example: mxa connect 76561198982789899',
     execute: async function (msg, tokens) ***REMOVED***
-        if (tokens[0] !== undefined && new SteamID(tokens[0]).isValidIndividual()) ***REMOVED***
-            var res = await collections.inventories.countDocuments(***REMOVED***discord: msg.author.id***REMOVED***, ***REMOVED***limit: 1***REMOVED***)
-            var res2 = await collections.inventories.countDocuments(***REMOVED*** steam: tokens[0] ***REMOVED***, ***REMOVED***limit: 1***REMOVED***)
-            if(res === 1)***REMOVED***
+        if (tokens[0] !== undefined && /^(([0-9])***REMOVED***17***REMOVED***)$/.test(tokens[0]) && new SteamID(tokens[0]).isValidIndividual()) ***REMOVED***
+            let res = await collections.inventories.countDocuments(***REMOVED***discord: msg.author.id***REMOVED***, ***REMOVED***limit: 1***REMOVED***)
+            let res2 = await collections.inventories.countDocuments(***REMOVED***steam: tokens[0]***REMOVED***, ***REMOVED***limit: 1***REMOVED***)
+            if (res === 1) ***REMOVED***
                 msg.channel.send("You already connected a steam account. If you want to change it, contact one of the developers (`mxa contact`)")
-            ***REMOVED***
-            else if(res2 === 1)***REMOVED***
+            ***REMOVED*** else if (res2 === 1) ***REMOVED***
                 msg.channel.send("This Steam ID is already connected to a discord account. If you know this is your steam account and you want to change the discord assigned to it, contact the devs, use `mxa contact` for more info.")
-            ***REMOVED***
-            else ***REMOVED***
-                var code = genCode()
-                usersToCheck.push(***REMOVED*** discordId: msg.author.id, steamId: tokens[0], code: code, msg: msg, index: usersToCheck.length, iterations: 36 ***REMOVED***)
-                msg.channel.send("In order to verify your account, please add: `" + code + "` to your nickname. You can remove the code once the bot verifies you.")
+            ***REMOVED*** else ***REMOVED***
+                let code = genCode()
+                usersToCheck.push(***REMOVED***discordID: msg.author.id, steamID: tokens[0], code: code, msg: msg***REMOVED***)
+                msg.channel.send("In order to verify your account, please add: `" + code + "` to your nickname. Then use the `verify` command. You can remove the code once the bot verifies you.")
             ***REMOVED***
         ***REMOVED*** else ***REMOVED***
             msg.channel.send("Please enter a valid SteamID after the command, example: `mxa connect 76561198982789899`.")
@@ -29,33 +31,26 @@ module.exports = ***REMOVED***
     ***REMOVED***
 ***REMOVED***
 
-const possibleCodeChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+let usersToCheck = []
 
-var usersToCheck = [] //Stores what users to await for verification
-
-//Example of a connects item: ***REMOVED*** discordId: 1032910239, steamId: 1203910239120, code: TW02FOS, msg: 1023910293109, iterations: 36 ***REMOVED*** 36 iterations = 180 senconds = 3 minutes...
-
-async function checkUsers() ***REMOVED***
-    if(usersToCheck.length > 0)***REMOVED***
-        usersToCheck.forEach(async user => ***REMOVED***
-            if((await steamClient.getPersonas([user.steamId])).personas[user.steamId].player_name.split(/ +/).includes(user.code))***REMOVED***
-                user.msg.channel.send("Verified " + user.msg.author.username + " successfuly.")
-                collections.inventories.insertOne(***REMOVED*** steam: user.steamId, discord: user.discordId, wallet: 0, inventoryContents: [] ***REMOVED***)
-                for(var i = 0; i < usersToCheck.length; i++)***REMOVED***
-                    if(usersToCheck[i] === user)***REMOVED***
-                        usersToCheck.splice(i, 1)
-                    ***REMOVED***
-                ***REMOVED***
-            ***REMOVED***
-        ***REMOVED***)
+async function checkUsers()***REMOVED***
+    if(usersToCheck.length === 0)***REMOVED***
+        return
     ***REMOVED***
-    console.log(usersToCheck);
+    let personas = (await SteamClient.getPersonas([...usersToCheck.map(x => x.steamID)])).personas
+    for (let i = 0; i < usersToCheck.length; i++) ***REMOVED***
+        let steamId = usersToCheck[i].steamID.toString()
+        if(personas[steamId].player_name.split(/ +/).includes(usersToCheck[i].code))***REMOVED***
+            collections.inventories.insertOne(***REMOVED*** steam: steamId, discord: usersToCheck[i].discordID, wallet: 0, inventoryContents: [] ***REMOVED***)
+            usersToCheck[i].msg.reply('Verified ' + usersToCheck[i].msg.author.username + ' successfully.')
+            usersToCheck.splice(i, 1)
+        ***REMOVED***
+    ***REMOVED***
 ***REMOVED***
 
-setInterval(checkUsers, 2000)
-
+const possibleCodeChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 function genCode() ***REMOVED***
-    var code = ""
+    let code = ""
 
     for (let i = 0; i < 7; i++) ***REMOVED***
         code += possibleCodeChars.charAt(Math.floor(Math.random() * possibleCodeChars.length))
