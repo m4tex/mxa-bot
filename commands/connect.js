@@ -22,8 +22,8 @@ module.exports = ***REMOVED***
                 msg.channel.send("This Steam ID is already connected to a discord account. If you know this is your steam account and you want to change the discord assigned to it, contact the devs, use `mxa contact` for more info.")
             ***REMOVED*** else ***REMOVED***
                 let code = genCode()
-                usersToCheck.push(***REMOVED***discordID: msg.author.id, steamID: tokens[0], code: code, msg: msg***REMOVED***)
-                msg.channel.send("In order to verify your account, please add: `" + code + "` to your nickname. Then use the `verify` command. You can remove the code once the bot verifies you.")
+                usersToCheck.push(***REMOVED***discordID: msg.author.id, steamID: tokens[0], code: code, msg: msg, iterations: 5***REMOVED***)
+                msg.channel.send("In order to verify your account, please add: `" + code + "` to your nickname. It should take 20 seconds at most, the request will expire after 80-100 seconds. You can remove the code once the bot verifies you.")
             ***REMOVED***
         ***REMOVED*** else ***REMOVED***
             msg.channel.send("Please enter a valid SteamID after the command, example: `mxa connect 76561198982789899`.")
@@ -33,22 +33,34 @@ module.exports = ***REMOVED***
 
 let usersToCheck = []
 
-async function checkUsers()***REMOVED***
-    if(usersToCheck.length === 0)***REMOVED***
+async function checkUsers() ***REMOVED***
+    if (usersToCheck.length === 0) ***REMOVED***
         return
     ***REMOVED***
     let personas = (await SteamClient.getPersonas([...usersToCheck.map(x => x.steamID)])).personas
     for (let i = 0; i < usersToCheck.length; i++) ***REMOVED***
         let steamId = usersToCheck[i].steamID.toString()
-        if(personas[steamId].player_name.split(/ +/).includes(usersToCheck[i].code))***REMOVED***
-            collections.inventories.insertOne(***REMOVED*** steam: steamId, discord: usersToCheck[i].discordID, wallet: 0, inventoryContents: [] ***REMOVED***)
-            usersToCheck[i].msg.reply('Verified ' + usersToCheck[i].msg.author.username + ' successfully.')
+        let currentUser = usersToCheck[i]
+        if (personas[steamId].player_name.split(/ +/).includes(usersToCheck[i].code)) ***REMOVED***
+            collections.inventories.insertOne(***REMOVED***
+                steam: steamId,
+                discord: currentUser.discordID,
+                wallet: 0,
+                inventoryContents: []
+            ***REMOVED***)
+            currentUser.msg.reply('Verified ' + currentUser.msg.author.username + ' successfully.')
             usersToCheck.splice(i, 1)
+        ***REMOVED*** else if (currentUser.iterations <= 0) ***REMOVED***
+            currentUser.msg.reply('Your connecting request expired.')
+            usersToCheck.splice(i, 1)
+        ***REMOVED*** else ***REMOVED***
+            currentUser.iterations--
         ***REMOVED***
     ***REMOVED***
 ***REMOVED***
 
 const possibleCodeChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+
 function genCode() ***REMOVED***
     let code = ""
 

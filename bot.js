@@ -14,7 +14,7 @@ let collections
 ***REMOVED***)()
 
 //Discord.js module implementation
-var discordBot = require('./modules/discordClient')
+let discordBot = require('./modules/discordClient')
 
 //Steam modules implementation
 const steamClient = require('./modules/steamClient')
@@ -32,11 +32,18 @@ discordBot.on('ready', () => ***REMOVED***
     steamClient.logOn(logOnOptions)
 ***REMOVED***);
 
-discordBot.on('messageCreate', function (msg) ***REMOVED***
-    var tokens = msg.content.toLowerCase().split(/ +/)
-    if (tokens.shift() === 'mxa') ***REMOVED***
-        var command = tokens.shift()
-        var dcCommand = discordBot.commands.get(command)
+discordBot.on('messageCreate', async function (msg) ***REMOVED***
+
+    let prefix = 'mxa'
+    //This checks for a custom prefix on a server.
+    if(await collections.prefixes.countDocuments(***REMOVED***serverID: msg.guildId***REMOVED***, ***REMOVED***limit: 1***REMOVED***))***REMOVED***
+        let dbData = await collections.prefixes.find(***REMOVED***serverID: msg.guildId***REMOVED***).limit(1).next()//I read that find().limit(1) is faster than findOne() that's why I'm using it.
+        prefix = dbData.bot_prefix //For some reason I couldn't directly access bot_prefix in the line above... that's why 2 lines.
+    ***REMOVED***
+    let tokens = msg.content.toLowerCase().split(/ +/)
+    if (tokens.shift() === prefix) ***REMOVED***
+        let command = tokens.shift()
+        let dcCommand = discordBot.commands.get(command)
         if (dcCommand !== undefined) ***REMOVED***
             dcCommand.execute(msg, tokens)
         ***REMOVED*** else ***REMOVED***

@@ -10,7 +10,7 @@ module.exports = ***REMOVED***
     execute: async function(msg, tokens) ***REMOVED***
         let res = await collections.inventories.countDocuments(***REMOVED***discord: msg.author.id***REMOVED***, ***REMOVED***limit: 1***REMOVED***);
         if(res === 1)***REMOVED***
-            var invData = await collections.inventories.find(***REMOVED*** discord : msg.author.id ***REMOVED***).limit(1)
+            let invData = await collections.inventories.find(***REMOVED*** discord : msg.author.id ***REMOVED***).limit(1).next()
             if(invData.inventoryContents === undefined)***REMOVED***
                 msg.channel.send("Items: none.")
             ***REMOVED***
