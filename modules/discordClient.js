@@ -22,7 +22,6 @@ fs.readdirSync(config.localPath + 'commands/').filter(file => file.endsWith('.js
 
 //I have to implement the 'help' command from here because it needs access to the commands list and last attempts to implement it went...
 //not so well... so I just decided to do it this way.
-
 let helpCommand = ***REMOVED***
   name: 'help',
   description: 'Displays a full list of the commands, or a description of a single command. You can even specify a command after `\'help\'` to get information about the given command.',
@@ -54,3 +53,9 @@ discordBot.commands.set(helpCommand.name, helpCommand)
 discordBot.login(config.discordToken);
 //exports the client.
 module.exports = discordBot
+
+//Extra stuff (cosmetic)
+discordBot.on('ready', () => ***REMOVED***
+  console.info(`Bot started as: $***REMOVED***discordBot.user.tag***REMOVED***.`)
+  discordBot.user.setActivity('mxa start', ***REMOVED***type: 'PLAYING'***REMOVED***)
+***REMOVED***);
