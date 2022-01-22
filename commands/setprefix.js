@@ -6,7 +6,7 @@ let collections
 module.exports = ***REMOVED***
     name: 'setprefix',
     description: 'Changes the prefix that distinguishes the MxaBot\'s commands.',
-    usage: 'prefix setprefix newPrefix. Example: `mxa setprefix !#`',
+    usage: 'prefix setprefix newPrefix. Example: mxa setprefix !#',
     execute: async function (msg, tokens) ***REMOVED***
         if (tokens[0] === undefined) ***REMOVED***
             msg.channel.send('Please specify the prefix after the command. Check out `help setprefix` if you still aren\'t sure about the usage.')
@@ -19,7 +19,7 @@ module.exports = ***REMOVED***
                     bot_prefix: tokens[0]
                 ***REMOVED***
             ***REMOVED***, ***REMOVED***upsert: true***REMOVED***)
-            msg.channel.send('Changed the bot\'s prefix to: ' + tokens[0] + ' .')
+            msg.channel.send('Changed the bot\'s prefix to: ' + tokens[0] + '.')
         ***REMOVED***
     ***REMOVED***
 ***REMOVED***

@@ -17,7 +17,7 @@ module.exports = ***REMOVED***
             let res = await collections.inventories.countDocuments(***REMOVED***discord: msg.author.id***REMOVED***, ***REMOVED***limit: 1***REMOVED***)
             let res2 = await collections.inventories.countDocuments(***REMOVED***steam: tokens[0]***REMOVED***, ***REMOVED***limit: 1***REMOVED***)
             if (res === 1) ***REMOVED***
-                msg.channel.send("You already connected a steam account. If you want to change it, contact one of the developers (`mxa contact`)")
+                msg.channel.send("You already have connected a steam account. If you want to change it, contact one of the developers (`mxa contact`)")
             ***REMOVED*** else if (res2 === 1) ***REMOVED***
                 msg.channel.send("This Steam ID is already connected to a discord account. If you know this is your steam account and you want to change the discord assigned to it, contact the devs, use `mxa contact` for more info.")
             ***REMOVED*** else ***REMOVED***
