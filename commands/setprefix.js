@@ -12,7 +12,11 @@ module.exports = ***REMOVED***
             msg.channel.send('Please specify the prefix after the command. Check out `help setprefix` if you still aren\'t sure about the usage.')
         ***REMOVED*** else if (tokens[0].length > 10) ***REMOVED***
             msg.channel.send('The prefix cannot be longer than 10 characters.')
-        ***REMOVED*** else ***REMOVED***
+        ***REMOVED*** else if(tokens[0] === 'mxa') ***REMOVED***
+            collections.prefixes.deleteOne(***REMOVED***serverID: msg.guildId***REMOVED***)
+            msg.channel.send('Changed the bot\'s prefix to: ' + tokens[0] + '.')
+        ***REMOVED***
+        else ***REMOVED***
             await collections.prefixes.updateOne(***REMOVED***serverID: msg.guildId***REMOVED***, ***REMOVED***
                 $set: ***REMOVED***
                     serverID: msg.guildId,

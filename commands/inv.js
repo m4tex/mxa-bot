@@ -8,9 +8,8 @@ module.exports = ***REMOVED***
     description: 'Shows inventory of a user (no user in the arguments will show the senders inventory)',
     usage: 'prefix inv optionalUser. Example: mxa inv @m4tex#5886.',
     execute: async function(msg, tokens) ***REMOVED***
-        let res = await collections.inventories.countDocuments(***REMOVED***discord: msg.author.id***REMOVED***, ***REMOVED***limit: 1***REMOVED***);
-        if(res === 1)***REMOVED***
-            let invData = await collections.inventories.find(***REMOVED*** discord : msg.author.id ***REMOVED***).limit(1).next()
+        if(await collections.inventories.countDocuments(***REMOVED***discord: msg.author.id***REMOVED***, ***REMOVED***limit: 1***REMOVED***))***REMOVED***
+            let invData = await collections.inventories.findOne(***REMOVED***discord: msg.author.id***REMOVED***)
             if(invData.inventoryContents === undefined)***REMOVED***
                 msg.channel.send("Items: none.")
             ***REMOVED***
@@ -20,7 +19,7 @@ module.exports = ***REMOVED***
             ***REMOVED***
         ***REMOVED***
         else***REMOVED***
-            msg.channel.send("No inventory found. Use `mxa connect` to begin your adventure!")
+            msg.channel.send("No inventory found. Use `mxa connect` to start your adventure!")
         ***REMOVED***
     ***REMOVED***
 ***REMOVED***

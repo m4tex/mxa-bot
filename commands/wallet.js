@@ -8,7 +8,7 @@ module.exports = ***REMOVED***
     description: 'Shows how many mxa credits you have!',
     usage: 'prefix wallet. Example: mxa wallet',
     execute: async function(msg, tokens) ***REMOVED***
-        if(collections.inventories.countDocuments(***REMOVED***discord: msg.authorId***REMOVED***))***REMOVED***
+        if(await collections.inventories.countDocuments(***REMOVED***discord: msg.author.id***REMOVED***, ***REMOVED***limit: 1***REMOVED***))***REMOVED***
             msg.reply('Your wallet balance is: ' + (await collections.inventories.findOne(***REMOVED***discord: msg.author.id***REMOVED***)).wallet + ' mxa coins.')
         ***REMOVED***
         else***REMOVED***
