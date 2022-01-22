@@ -25,5 +25,6 @@ module.exports = ***REMOVED***
             ***REMOVED***, ***REMOVED***upsert: true***REMOVED***)
             msg.channel.send('Changed the bot\'s prefix to: ' + tokens[0] + '.')
         ***REMOVED***
-    ***REMOVED***
+    ***REMOVED***,
+    permLevel: 1,
 ***REMOVED***

@@ -24,7 +24,7 @@ const SteamUser = require('steam-user')
 const logOnOptions = ***REMOVED***
     "accountName": config.username,
     "password": config.password,
-    "twoFactorCode" : SteamTotp.generateAuthCode(config.sharedSecret)
+    "twoFactorCode": SteamTotp.generateAuthCode(config.sharedSecret)
 ***REMOVED***
 //#endregion
 
@@ -32,13 +32,14 @@ const logOnOptions = ***REMOVED***
 discordBot.on('ready', () => ***REMOVED***
     console.info(`Bot started as: $***REMOVED***discordBot.user.tag***REMOVED***.`)
     steamClient.logOn(logOnOptions)
+    discordBot.user.setActivity('mxa start', ***REMOVED***type: 'PLAYING'***REMOVED***)
 ***REMOVED***);
 
 discordBot.on('messageCreate', async function (msg) ***REMOVED***
 
     let prefix = 'mxa'
     //This checks for a custom prefix on a server.
-    if(await collections.prefixes.countDocuments(***REMOVED***serverID: msg.guildId***REMOVED***, ***REMOVED***limit: 1***REMOVED***))***REMOVED***
+    if (await collections.prefixes.countDocuments(***REMOVED***serverID: msg.guildId***REMOVED***, ***REMOVED***limit: 1***REMOVED***)) ***REMOVED***
         prefix = (await collections.prefixes.findOne(***REMOVED***serverID: msg.guildId***REMOVED***)).bot_prefix
     ***REMOVED***
     let tokens = msg.content.toLowerCase().split(/ +/)
@@ -46,7 +47,11 @@ discordBot.on('messageCreate', async function (msg) ***REMOVED***
         let command = tokens.shift()
         let dcCommand = discordBot.commands.get(command)
         if (dcCommand !== undefined) ***REMOVED***
-            dcCommand.execute(msg, tokens)
+            if (!dcCommand.hasOwnProperty('permLevel') || (dcCommand.permLevel === 1 && msg.member.permissions.has('ADMINISTRATOR') || (dcCommand.permLevel === 2 && msg.author.id === config.devDiscordId))) ***REMOVED***
+                dcCommand.execute(msg, tokens)
+            ***REMOVED*** else ***REMOVED***
+                msg.channel.send('You don\'t have permissions to execute that command.')
+            ***REMOVED***
         ***REMOVED*** else ***REMOVED***
             msg.channel.send("This command doesn't exist. Check out `mxa help` to see a full list of the commands.")
         ***REMOVED***
