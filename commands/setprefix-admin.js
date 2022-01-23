@@ -1,6 +1,6 @@
 let collections
 (async () => ***REMOVED***
-    collections = await require('../modules/databaseManager')
+    collections = await require('../modules/databaseManager.js')
 ***REMOVED***)()
 
 module.exports = ***REMOVED***

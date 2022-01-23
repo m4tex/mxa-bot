@@ -5,8 +5,10 @@ const Discord = require('discord.js')
 //Creates the client
 let discordBot = new Discord.Client(***REMOVED***
   intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES]
-***REMOVED***);
+***REMOVED***)
 
+//exports the client.
+module.exports = discordBot
 //adds a new field to the client that stores the commands.
 discordBot.commands = new Discord.Collection()
 //stores the list that is shown when using the 'help' command
@@ -18,7 +20,7 @@ fs.readdirSync(config.localPath + 'commands/').filter(file => file.endsWith('.js
   .map(file => require(`$***REMOVED***config.localPath***REMOVED***commands/$***REMOVED***file***REMOVED***`)).forEach(command => ***REMOVED***
   discordBot.commands.set(command.name, command)
   commandList.push(command.name)
-***REMOVED***);
+***REMOVED***)
 
 //I have to implement the 'help' command from here because it needs access to the commands list and last attempts to implement it went...
 //not so well... so I just decided to do it this way.
@@ -50,12 +52,10 @@ let helpCommand = ***REMOVED***
 //adds the command to the commands, but it doesn't add the command to the list.
 discordBot.commands.set(helpCommand.name, helpCommand)
 //logs the bot into discord.
-discordBot.login(config.discordToken);
-//exports the client.
-module.exports = discordBot
+discordBot.login(config.discordToken)
 
 //Extra stuff (cosmetic)
 discordBot.on('ready', () => ***REMOVED***
   console.info(`Bot started as: $***REMOVED***discordBot.user.tag***REMOVED***.`)
   discordBot.user.setActivity('mxa start', ***REMOVED***type: 'PLAYING'***REMOVED***)
-***REMOVED***);
+***REMOVED***)

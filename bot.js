@@ -6,7 +6,7 @@ const config = require('./config.json')
 //MongoDB implementation (imports collections)
 let collections
 (async () => ***REMOVED***
-    collections = await require('./modules/databaseManager')
+    collections = await require('./modules/databaseManager.js')
 ***REMOVED***)()
 
 //Discord.js module implementation

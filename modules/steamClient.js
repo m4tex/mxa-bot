@@ -1,7 +1,7 @@
 //imports database collections
 let collections
 (async function () ***REMOVED***
-    collections = await require('../modules/databaseManager')
+    collections = await require('./databaseManager.js')
 ***REMOVED***)()
 
 const SteamUser = require('steam-user')
@@ -26,7 +26,7 @@ const logOnOptions = ***REMOVED***
 ***REMOVED***
 
 steamClient.setOption('promptSteamGuardCode', false)
-steamClient.logOn(logOnOptions)
+// steamClient.logOn(logOnOptions)
 
 module.exports = steamClient
 
@@ -69,8 +69,7 @@ manager.on('newOffer', async offer => ***REMOVED***
     if (await collections.inventories.countDocuments(***REMOVED***steam: steamID***REMOVED***, ***REMOVED***limit: 1***REMOVED***)) ***REMOVED***
         if (offer.itemsToGive.length === 0 && !offer.isGlitched() && offer.itemsToReceive.length > 0) ***REMOVED***
             offer.accept(() => ***REMOVED***
-                let items = offer.itemsToReceive.map(x => ***REMOVED***name: x.name, appId: x.appid, ***REMOVED***)
-                collections.inventories.updateOne(***REMOVED***steam: steamID***REMOVED***, ***REMOVED***$push: ***REMOVED***inventoryContents: ***REMOVED***$each: skinNames***REMOVED******REMOVED******REMOVED***)
+                collections.inventories.updateOne(***REMOVED***steam: steamID***REMOVED***, ***REMOVED***$push: ***REMOVED***inventoryContents: ***REMOVED***$each: offer.itemsToReceive***REMOVED******REMOVED******REMOVED***)
                 steamClient.chat.sendFriendMessage(steamID, 'Successfully deposited your skins for 1230 mxa coins.')
             ***REMOVED***)
         ***REMOVED*** else ***REMOVED***
