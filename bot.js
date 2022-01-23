@@ -1,5 +1,6 @@
 //#region Imports and Node modules implementation
 //Importing the configuration file.
+
 const config = require('./config.json')
 
 //MongoDB implementation (imports collections)
@@ -9,8 +10,7 @@ let collections
 ***REMOVED***)()
 
 //Discord.js module implementation
-let discordBot = require('./modules/discordClient')
-
+const discordBot = require('./modules/discordClient')
 //Steam modules implementation
 const steamClient = require('./modules/steamClient')
 
@@ -28,7 +28,9 @@ discordBot.on('messageCreate', async function (msg) ***REMOVED***
         let command = tokens.shift()
         let dcCommand = discordBot.commands.get(command)
         if (dcCommand !== undefined) ***REMOVED***
-            if (!dcCommand.hasOwnProperty('permLevel') || (dcCommand.permLevel === 1 && msg.member.permissions.has('ADMINISTRATOR') || (dcCommand.permLevel === 2 && msg.author.id === config.devDiscordId))) ***REMOVED***
+            //This abomination takes care of permission restrictions for admin or dev commands. undefined = no permission requirements, 1 = for admins or above, 2 = for devs
+            if (!dcCommand.hasOwnProperty('permLevel') || (dcCommand.permLevel === 1 && msg.member.permissions.has('ADMINISTRATOR') ||
+                (dcCommand.permLevel === 1 && msg.author.id === config.devDiscordId)|| (dcCommand.permLevel === 2 && msg.author.id === config.devDiscordId))) ***REMOVED***
                 dcCommand.execute(msg, tokens)
             ***REMOVED*** else ***REMOVED***
                 msg.channel.send('You don\'t have permissions to execute that command.')
