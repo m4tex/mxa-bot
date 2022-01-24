@@ -8,9 +8,9 @@ let collections
     collections = await require('./modules/databaseManager.js')
 ***REMOVED***)()
 
-//Discord.js module implementation
+//Discord module implementation
 const discordBot = require('./modules/discordClient')
-//Steam modules implementation
+//Steam module implementation
 const steamClient = require('./modules/steamClient')
 
 //#endregion
