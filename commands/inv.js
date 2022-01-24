@@ -15,7 +15,7 @@ module.exports = ***REMOVED***
             ***REMOVED***
             else
             ***REMOVED***
-                msg.channel.send("Items: " + invData.inventoryContents.toString() + ".")
+                msg.channel.send("Items: " + invData.inventoryContents.join(', ') + ".")
             ***REMOVED***
         ***REMOVED***
         else***REMOVED***

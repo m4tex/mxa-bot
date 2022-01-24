@@ -1,6 +1,5 @@
 //#region Imports and Node modules implementation
 //Importing the configuration file.
-
 const config = require('./config.json')
 
 //MongoDB implementation (imports collections)

@@ -4,17 +4,22 @@ let collections
 ***REMOVED***)()
 
 const discordBot = require('../modules/discordClient')
-const ***REMOVED*** MessageActionRow, MessageButton, MessageEmbed ***REMOVED*** = require('discord.js');
+const ***REMOVED***MessageActionRow, MessageButton, MessageEmbed***REMOVED*** = require('discord.js');
 
 discordBot.on('interactionCreate', async interaction => ***REMOVED***
     if (!interaction.isButton()) return;
-    if (interaction.customId === 'previous_ticket')***REMOVED***
-        await interaction.update('Previous boi')
+
+    if (interaction.customId === 'ticket_previous') ***REMOVED***
+        currentIndex--
+    ***REMOVED*** else if (interaction.customId === 'ticket_next') ***REMOVED***
+        currentIndex++
     ***REMOVED***
-    else if(interaction.customId === 'next_ticket')***REMOVED***
-        await interaction.update('Next boi')
-    ***REMOVED***
-***REMOVED***);
+    interaction.update(***REMOVED***embeds: [ticketToEmbed(tickets[currentIndex])], components: [createButtons(currentIndex)]***REMOVED***)
+    // interaction.update(***REMOVED***components: [createButtons(currentIndex)]***REMOVED***)
+***REMOVED***)
+
+let currentIndex
+let tickets
 
 module.exports = ***REMOVED***
     name: 'reviewtickets',
@@ -22,15 +27,34 @@ module.exports = ***REMOVED***
     usage: 'prefix reviewtickets. Example: mxa reviewtickets.',
     permLevel: 2,
     execute: async function (msg, tokens) ***REMOVED***
+        currentIndex = 0
         let ticketCount = await collections.dc_tickets.countDocuments()
         if (ticketCount > 0) ***REMOVED***
-            const embed = new MessageEmbed().setTitle(`Ticket by $***REMOVED***'someone'***REMOVED***.`).setColor('LIGHT_GREY').setDescription('Hello, world!')
-            const row = new MessageActionRow().addComponents(new MessageButton().setCustomId('previous_ticket').setEmoji('⬅️').setStyle('SECONDARY'),
-                new MessageButton().setCustomId('next_ticket').setEmoji('➡️').setStyle('SECONDARY'))
-            msg.channel.send(***REMOVED***embeds: [embed], components: [row]***REMOVED***)
-        ***REMOVED***
-        else***REMOVED***
+            tickets = await collections.dc_tickets.find().toArray()
+            msg.channel.send(***REMOVED***
+                embeds: [ticketToEmbed(tickets[currentIndex])],
+                components: [createButtons(currentIndex)]
+            ***REMOVED***)
+        ***REMOVED*** else ***REMOVED***
             msg.channel.send('No tickets to review.')
         ***REMOVED***
     ***REMOVED***
+***REMOVED***
+
+function ticketToEmbed(ticket) ***REMOVED***
+    return new MessageEmbed().setTitle('Ticket by ' + ticket.user).setDescription(ticket.issue).setFooter(ticket.date.toString())
+***REMOVED***
+
+function createButtons(currentIndex) ***REMOVED***
+    let row = new MessageActionRow()
+    let prevBtn = new MessageButton().setCustomId('ticket_previous').setEmoji('⬅️').setStyle('SECONDARY')
+    let nextBtn = new MessageButton().setCustomId('ticket_next').setEmoji('➡️').setStyle('SECONDARY')
+
+    if (currentIndex === 0) ***REMOVED***
+        prevBtn.setDisabled()
+    ***REMOVED***
+    if (currentIndex === tickets.length - 1) ***REMOVED***
+        nextBtn.setDisabled()
+    ***REMOVED***
+    return row.addComponents(prevBtn, nextBtn)
 ***REMOVED***
