@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1a312d60-a1d0-4f48-b363-636d09b3500c" name="Changes" comment="hm" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="JsBowerSettings">
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="23bTWA9aJjvflJDYVnD6wXMTjlQ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="JavaScript" />
+    <property name="javascript.nodejs.core.library.configured.version" value="16.13.1" />
+    <property name="javascript.nodejs.core.library.typings.version" value="16.11.21" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
+  </component>
+  <component name="RunManager">
+    <configuration name="bot.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/bot.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.bot.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1a312d60-a1d0-4f48-b363-636d09b3500c" name="Changes" comment="" />
+      <created>1642001816327</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1642001816327</updated>
+      <workItem from="1642001818368" duration="1756000" />
+      <workItem from="1642506846804" duration="16672000" />
+      <workItem from="1642603307265" duration="6417000" />
+      <workItem from="1642771790367" duration="32633000" />
+      <workItem from="1642883219631" duration="7584000" />
+      <workItem from="1642936864594" duration="33999000" />
+      <workItem from="1643113727871" duration="3676000" />
+      <workItem from="1643117619626" duration="1426000" />
+    </task>
+    <task id="LOCAL-00001" summary="Fixed the connect command, it's much cleaner and more performant">
+      <created>1642606299264</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1642606299264</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added the changeprefix command. Fixed small issues.">
+      <created>1642786654415</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1642786654415</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Cleaned the discordClient.js' code and added comments.">
+      <created>1642865140072</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1642865140072</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added functionality to the wallet command and fixed spelling/grammar errors in 3 other commands.">
+      <created>1642866654252</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1642866654252</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added auto log-in using identity secret and optimized communication with the database.">
+      <created>1642871463883</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1642871463883</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added the report command">
+      <created>1642872793905</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1642872793905</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added a basic ticket/report command">
+      <created>1642876129404</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1642876129404</updated>
+    </task>
+    <task id="LOCAL-00008" summary="made a way to add permission restrictions for commands">
+      <created>1642880368470</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1642880368470</updated>
+    </task>
+    <task id="LOCAL-00009" summary="auto friend request on steam and mostly code refactoring.">
+      <created>1642884567805</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1642884567805</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added the trade accepting for connected steam users.">
+      <created>1642946359416</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1642946359416</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Created a button implementation for commands.">
+      <created>1642957024843</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1642957024843</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Made the reviewtickets-dev.js command, will make it better later, it's only for the devs anyways..">
+      <created>1643038120587</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1643038120587</updated>
+    </task>
+    <task id="LOCAL-00013" summary="idk man">
+      <created>1643048189476</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1643048189476</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Now custom prefixes appear in the bot's local nickname.">
+      <created>1643115444313</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1643115444313</updated>
+    </task>
+    <task id="LOCAL-00015" summary="hm">
+      <created>1643117060122</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1643117060122</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixed the connect command, it's much cleaner.. and more performant" />
+    <MESSAGE value="Fixed the connect command, it's much cleaner and more performant" />
+    <MESSAGE value="Added the changeprefix command. Fixed small issues." />
+    <MESSAGE value="Cleaned the discordClient.js' code and added comments." />
+    <MESSAGE value="Added functionality to the wallet command and fixed spelling/grammar errors in 3 other commands." />
+    <MESSAGE value="Added auto log-in using identity secret and optimized communication with the database." />
+    <MESSAGE value="added the report command" />
+    <MESSAGE value="added a basic ticket/report command" />
+    <MESSAGE value="made a way to add permission restrictions for commands" />
+    <MESSAGE value="auto friend request on steam and mostly code refactoring." />
+    <MESSAGE value="Added the trade accepting for connected steam users." />
+    <MESSAGE value="Created a button implementation for commands." />
+    <MESSAGE value="Made the reviewtickets-dev.js command, will make it better later, it's only for the devs anyways.." />
+    <MESSAGE value="idk man" />
+    <MESSAGE value="Now custom prefixes appear in the bot's local nickname." />
+    <MESSAGE value="hm" />
+    <option name="LAST_COMMIT_MESSAGE" value="hm" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="NodeJSConfigurationType">
+        <watch expression="client[&quot;[[Prototype]]&quot;][&quot;[[Target]]&quot;][&quot;[[Prototype]]&quot;].constructor.prototype.__defineSetter__" language="JavaScript" />
+        <watch expression="ticket.issue" />
+        <watch expression="msg.guild.members.client.guilds" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
