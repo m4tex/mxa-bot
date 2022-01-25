@@ -10,7 +10,6 @@ module.exports = ***REMOVED***
     description: 'Changes the prefix that distinguishes the MxaBot\'s commands.',
     usage: 'prefix setprefix newPrefix. Example: mxa setprefix !#',
     execute: async function (msg, tokens) ***REMOVED***
-        let hm = msg.guild
         if (tokens[0] === undefined) ***REMOVED***
             msg.channel.send('Please specify the prefix after the command. Check out `help setprefix` if you still aren\'t sure about the usage.')
         ***REMOVED*** else if (tokens[0].length > 10) ***REMOVED***
@@ -18,7 +17,7 @@ module.exports = ***REMOVED***
         ***REMOVED*** else if(tokens[0] === 'mxa') ***REMOVED***
             collections.prefixes.deleteOne(***REMOVED***serverID: msg.guildId***REMOVED***)
             msg.channel.send('Changed the bot\'s prefix to: ' + tokens[0] + '.')
-            msg.guild.member(discordBot.user).setNickname('')
+            msg.guild.me.setNickname('M4texaBot')
         ***REMOVED***
         else ***REMOVED***
             await collections.prefixes.updateOne(***REMOVED***serverID: msg.guildId***REMOVED***, ***REMOVED***
@@ -28,6 +27,7 @@ module.exports = ***REMOVED***
                 ***REMOVED***
             ***REMOVED***, ***REMOVED***upsert: true***REMOVED***)
             msg.channel.send('Changed the bot\'s prefix to: ' + tokens[0] + '.')
+            msg.guild.me.setNickname('M4texaBot (prefix ' + tokens[0] + ')')
         ***REMOVED***
     ***REMOVED***,
     permLevel: 1,
