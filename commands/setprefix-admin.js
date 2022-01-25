@@ -1,34 +1,34 @@
 let collections
-(async () => ***REMOVED***
+(async () => {
     collections = await require('../modules/databaseManager.js')
-***REMOVED***)()
+})()
 
 const discordBot = require('../modules/discordClient')
 
-module.exports = ***REMOVED***
+module.exports = {
     name: 'setprefix',
     description: 'Changes the prefix that distinguishes the MxaBot\'s commands.',
     usage: 'prefix setprefix newPrefix. Example: mxa setprefix !#',
-    execute: async function (msg, tokens) ***REMOVED***
-        if (tokens[0] === undefined) ***REMOVED***
+    execute: async function (msg, tokens) {
+        if (tokens[0] === undefined) {
             msg.channel.send('Please specify the prefix after the command. Check out `help setprefix` if you still aren\'t sure about the usage.')
-        ***REMOVED*** else if (tokens[0].length > 10) ***REMOVED***
+        } else if (tokens[0].length > 10) {
             msg.channel.send('The prefix cannot be longer than 10 characters.')
-        ***REMOVED*** else if(tokens[0] === 'mxa') ***REMOVED***
-            collections.prefixes.deleteOne(***REMOVED***serverID: msg.guildId***REMOVED***)
+        } else if(tokens[0] === 'mxa') {
+            collections.prefixes.deleteOne({serverID: msg.guildId})
             msg.channel.send('Changed the bot\'s prefix to: ' + tokens[0] + '.')
             msg.guild.me.setNickname('M4texaBot')
-        ***REMOVED***
-        else ***REMOVED***
-            await collections.prefixes.updateOne(***REMOVED***serverID: msg.guildId***REMOVED***, ***REMOVED***
-                $set: ***REMOVED***
+        }
+        else {
+            await collections.prefixes.updateOne({serverID: msg.guildId}, {
+                $set: {
                     serverID: msg.guildId,
                     bot_prefix: tokens[0]
-                ***REMOVED***
-            ***REMOVED***, ***REMOVED***upsert: true***REMOVED***)
+                }
+            }, {upsert: true})
             msg.channel.send('Changed the bot\'s prefix to: ' + tokens[0] + '.')
             msg.guild.me.setNickname('M4texaBot (prefix ' + tokens[0] + ')')
-        ***REMOVED***
-    ***REMOVED***,
+        }
+    },
     permLevel: 1,
-***REMOVED***
+}

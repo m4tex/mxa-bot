@@ -1,39 +1,39 @@
-// client.on('loggedOn', () => ***REMOVED***
+// client.on('loggedOn', () => {
 //     client.setPersona(SteamUser.EPersonaState.Online)
 //     client.gamesPlayed(["Good Soup, my bot is working ;-;"])
 //     console.log("logged in.");
-// ***REMOVED***)
+// })
 
-// client.on('friendMessage', function (steamID, message) ***REMOVED***
+// client.on('friendMessage', function (steamID, message) {
 //     console.log(message);
 //     enteredCmd = message;
-// ***REMOVED***)
+// })
 
 //#region chatbot
 // messageIDS = []
 // var currentUser;
 // var stopCommandEntered = false;
 
-// client.on("friendMessage", function (steamID, message) ***REMOVED***
-//     if (message == "!stop!") ***REMOVED***
+// client.on("friendMessage", function (steamID, message) {
+//     if (message == "!stop!") {
 //         stopCommandEntered = true;
-//     ***REMOVED*** else
-//     if (message.toLowerCase().includes("gay") || message.toLowerCase().includes("bög")) ***REMOVED***
+//     } else
+//     if (message.toLowerCase().includes("gay") || message.toLowerCase().includes("bög")) {
 //         client.chatMessage(steamID, "Yes, I agree. You're gay.")
-//     ***REMOVED*** else if (message.toLowerCase().includes("wtf")) ***REMOVED***
+//     } else if (message.toLowerCase().includes("wtf")) {
 //         client.chatMessage(steamID, "Surprised, are we? Not a surprise for me...");
-//     ***REMOVED*** else
-//     if (messageIDS.some(obj => obj.steamID == steamID.accountid)) ***REMOVED***
+//     } else
+//     if (messageIDS.some(obj => obj.steamID == steamID.accountid)) {
 //         currentUser = messageIDS.findIndex(obj => obj.steamID === steamID.accountid);
-//     ***REMOVED*** else ***REMOVED***
-//         messageIDS.push(***REMOVED***
+//     } else {
+//         messageIDS.push({
 //             steamID: steamID.accountid,
 //             messageID: 0
-//         ***REMOVED***)
+//         })
 //         currentUser = messageIDS.length - 1;
-//     ***REMOVED***
+//     }
 //     var mess = "";
-//     switch (messageIDS[currentUser].messageID) ***REMOVED***
+//     switch (messageIDS[currentUser].messageID) {
 //         case 0:
 //             mess = "Hi :3. M4tex is currently unavaliable, try again later >.<"
 //             break;
@@ -67,24 +67,24 @@
 //         default:
 //             mess = "..."
 //             break;
-//     ***REMOVED***
+//     }
 //     client.chatMessage(steamID, mess)
 
 //     messageIDS[currentUser].messageID += 1;
 
 //     console.log(messageIDS);
-// ***REMOVED***);
+// });
 
-// async function triggered(id) ***REMOVED***
+// async function triggered(id) {
 //     var messagesSent = 0;
 
 //     client.chatMessage(id, "Okay.. you want it, you got it...");
-//     for (var i = 3; i > 0; i--) ***REMOVED***
-//         client.chatMessage(id, `Message Incoming in $***REMOVED***i***REMOVED***...`);
+//     for (var i = 3; i > 0; i--) {
+//         client.chatMessage(id, `Message Incoming in ${i}...`);
 //         await new Promise(resolve => setTimeout(resolve, 1000));
-//     ***REMOVED***
-//     while (!stopCommandEntered) ***REMOVED***
-//         if (messagesSent < 10) ***REMOVED***
+//     }
+//     while (!stopCommandEntered) {
+//         if (messagesSent < 10) {
 //             client.chatMessage(id, "EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!" +
 //                     "EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!" +
 //                     "EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!") +
@@ -94,124 +94,124 @@
 //                 "EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!" +
 //                 "EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!" +
 //                 "EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!EAT IT!"
-//         ***REMOVED*** else ***REMOVED***
+//         } else {
 //             messagesSent = 0;
 //             // client.chatMessage(id, "TYPE !stop! TO STOP THE SPAM :)");
-//         ***REMOVED***
+//         }
 
 //         messagesSent++;
 //         await new Promise(resolve => setTimeout(resolve, 200));
-//     ***REMOVED***
-// ***REMOVED***
+//     }
+// }
 //#endregion
 
 
-// function sendTrade()***REMOVED***
+// function sendTrade(){
 //     let offer = manager.createOffer('https://steamcommunity.com/tradeoffer/new/?partner=176566804&token=anzdUiyt');
 
-//     if (items[0].tradable) ***REMOVED***
+//     if (items[0].tradable) {
 //         offer.addTheirItem(items[0]);
 
-//         offer.send((err) => ***REMOVED***
-//             if (err) ***REMOVED***
+//         offer.send((err) => {
+//             if (err) {
 //                 console.log(err);
-//             ***REMOVED***
-//         ***REMOVED***);
+//             }
+//         });
 //         console.log("Sent a trade offer");
-//     ***REMOVED***
-// ***REMOVED***
+//     }
+// }
 
 
-// const rl = readline.createInterface(***REMOVED***
+// const rl = readline.createInterface({
 //     input: process.stdin,
 //     output: process.stdout
-// ***REMOVED***);
+// });
 
-// manager.setCookies(cookies, function (err) ***REMOVED***
+// manager.setCookies(cookies, function (err) {
 
-//     rl.question("Start? ", function (e) ***REMOVED***
+//     rl.question("Start? ", function (e) {
 //         sendTrade();
 //         rl.close();
-//     ***REMOVED***)
-// ***REMOVED***)
+//     })
+// })
 
 // var loopCondition = false;
-// while (!loopCondition) ***REMOVED***
-//     manager.getUserInventoryContents('76561198136832532', 730, 2, true, function (err, inventory) ***REMOVED***
-//         if (!inventory.includes(items[0])) ***REMOVED***
+// while (!loopCondition) {
+//     manager.getUserInventoryContents('76561198136832532', 730, 2, true, function (err, inventory) {
+//         if (!inventory.includes(items[0])) {
 //             loopCondition = true
-//         ***REMOVED***else***REMOVED***
+//         }else{
 //             console.log('no knife found...');
-//         ***REMOVED***
-//     ***REMOVED***)
+//         }
+//     })
 
 //     await new Promise(resolve => setTimeout(resolve, 10000));
-// ***REMOVED***
+// }
 
 var collections
-async function db() ***REMOVED***
+async function db() {
    collections = await require('../modules/databaseManager')
-***REMOVED***
+}
 db()
 
-module.exports = ***REMOVED***
+module.exports = {
     name: 'unset',
     description: 'This command unsets a channel from a specified mode.',
-    execute: async function (msg, args) ***REMOVED***
-        if (args[0] === 'dev') ***REMOVED***
-            if (await collections.devchannels.countDocuments(***REMOVED*** channelID: msg.channelId ***REMOVED***, ***REMOVED*** limit: 1***REMOVED***) === 1) ***REMOVED***
-                await collections.devchannels.deleteOne(***REMOVED*** channelID: msg.channelId ***REMOVED***)
+    execute: async function (msg, args) {
+        if (args[0] === 'dev') {
+            if (await collections.devchannels.countDocuments({ channelID: msg.channelId }, { limit: 1}) === 1) {
+                await collections.devchannels.deleteOne({ channelID: msg.channelId })
                 msg.channel.send("Removed the `dev` mode from this channel.")
-            ***REMOVED*** else ***REMOVED***
+            } else {
                 msg.channel.send("This channel is not set to 'dev' mode.")
-            ***REMOVED***
-        ***REMOVED*** else ***REMOVED***
+            }
+        } else {
             msg.channel.send("Couldn't find channel mode: " + args[0] + ". Please make sure there are no misspellings or use `mxa help` to get a full list of commands.")
-        ***REMOVED***
-    ***REMOVED***
-***REMOVED***
+        }
+    }
+}
 
 var collections
-async function db() ***REMOVED***
+async function db() {
    collections = await require('../modules/databaseManager')
-***REMOVED***
+}
 db()
 
-module.exports = ***REMOVED***
+module.exports = {
   name: "set",
   description: "Assigns channel's purpose",
-  execute: async function(msg, args) ***REMOVED***
-    if (args[0] === 'dev') ***REMOVED***
-      var res = await collections.devchannels.countDocuments(***REMOVED***channelID: msg.channelId***REMOVED***, ***REMOVED*** limit: 1***REMOVED***)
-      if (res === 1) ***REMOVED***
+  execute: async function(msg, args) {
+    if (args[0] === 'dev') {
+      var res = await collections.devchannels.countDocuments({channelID: msg.channelId}, { limit: 1})
+      if (res === 1) {
         msg.channel.send("This channel is already set to dev mode.")
-      ***REMOVED*** else ***REMOVED***
-        collections.devchannels.insertOne(***REMOVED***channelID: msg.channelId***REMOVED***)
+      } else {
+        collections.devchannels.insertOne({channelID: msg.channelId})
         msg.channel.send("Set this channel to dev mode.")
-      ***REMOVED***
-    ***REMOVED***
-    else***REMOVED***
+      }
+    }
+    else{
       msg.channel.send("Couldn't find channel mode: " + args[0] + ". Please make sure there are no misspellings or use `mxa help` to get a full list of commands.")
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***
+    }
+  }
+}
 
 var collections
-async function db() ***REMOVED***
+async function db() {
    collections = await require('../modules/databaseManager')
-***REMOVED***
+}
 db()
 
 const extraData = require('../modules/commandData')
 
-module.exports = ***REMOVED***
+module.exports = {
     name: 'guard',
     description: 'Enters the steam bot steam guard code.',
-    execute: function (msg, tokens) ***REMOVED***
-        if (extraData.loggedOn === false) ***REMOVED***
+    execute: function (msg, tokens) {
+        if (extraData.loggedOn === false) {
             extraData.steamGuardCallback(tokens[0])
-        ***REMOVED*** else ***REMOVED***
+        } else {
             msg.channel.send("The bot is already logged into the account.")
-        ***REMOVED***
-    ***REMOVED***
-***REMOVED***
+        }
+    }
+}
