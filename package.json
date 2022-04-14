@@ -8,5 +8,8 @@
     "steam-user": "^4.20.2",
     "steamcommunity": "^3.43.1",
     "steamid": "^2.0.0"
+  },
+  "scripts": {
+    "start": "start cmd /k node bot.js"
   }
 }

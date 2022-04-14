@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a312d60-a1d0-4f48-b363-636d09b3500c" name="Changes" comment="hm" />
+    <list default="true" id="1a312d60-a1d0-4f48-b363-636d09b3500c" name="Changes" comment="hm">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot.js" beforeDir="false" afterPath="$PROJECT_DIR$/bot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,17 +45,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="JavaScript" />
-    <property name="javascript.nodejs.core.library.configured.version" value="16.13.1" />
-    <property name="javascript.nodejs.core.library.typings.version" value="16.11.21" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/wiktoralan.wisniowi/Desktop/Steam Bot",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="bot.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/bot.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
@@ -77,7 +80,14 @@
       <workItem from="1642883219631" duration="7584000" />
       <workItem from="1642936864594" duration="33999000" />
       <workItem from="1643113727871" duration="3676000" />
-      <workItem from="1643117619626" duration="1426000" />
+      <workItem from="1643117619626" duration="3431000" />
+      <workItem from="1643209423993" duration="1195000" />
+      <workItem from="1643274913422" duration="1256000" />
+      <workItem from="1643299109111" duration="834000" />
+      <workItem from="1643300300815" duration="12000" />
+      <workItem from="1644155741658" duration="304000" />
+      <workItem from="1649926790269" duration="56000" />
+      <workItem from="1649926867350" duration="1824000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed the connect command, it's much cleaner and more performant">
       <created>1642606299264</created>
@@ -184,7 +194,21 @@
       <option name="project" value="LOCAL" />
       <updated>1643117060122</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="hm">
+      <created>1643125492717</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1643125492717</updated>
+    </task>
+    <task id="LOCAL-00017" summary="hm">
+      <created>1643125570493</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1643125570493</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
