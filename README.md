@@ -15,7 +15,7 @@ executable by authorized users.
 
 ## Contact
 This framework is very rough and not quite polished and up to date. I do have plans to update it in the future and
-I realize the documentation is not very well defined. This could hardly be called a pure framework since I have code
+I realize the documentation is not very well defined. This could hardly be called a framework since I have code
 related to my personal project and it also has a steam client module that run a steam bot along with the discord bot.
 In case you are interested in this format for creation of discord bots, don't hesitate to contact me. I will eventually
 upgrade the codebase and probably add TypeScript so I don't have to document every detail and type. You can find my
