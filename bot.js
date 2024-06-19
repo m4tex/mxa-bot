@@ -10,8 +10,6 @@ const discordBot = require('./modules/discordClient')
 //Steam module implementation
 const steamClient = require('./modules/steamClient')
 
-"OTIwNDEzMDk3NjU3Nzg2NDQ5.Ybj_fg.iIYTo7APg_ihheLH3qR4hT8yy98"
-
 //#endregion
 
 //Here begins the actual code
